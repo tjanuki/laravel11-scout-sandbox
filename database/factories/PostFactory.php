@@ -21,6 +21,7 @@ class PostFactory extends Factory
             'user_id' => User::factory(),
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
+            'category' => $this->faker->randomElement(['Technology', 'Science', 'Sports', 'Entertainment']),
         ];
     }
 }
