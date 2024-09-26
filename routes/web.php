@@ -18,7 +18,7 @@ Route::get('/debug', function () {
     ]);
 
     // Perform the search
-    $search = \App\Models\Post::search('a');
+    $search = \App\Models\Post::search('iure');
 
     $category = 'Technology';
     if ($category) {
@@ -26,10 +26,7 @@ Route::get('/debug', function () {
     }
 
     // Get raw results
-    $results = $search->raw();
+    $results = $search->get();
 
-    // Extract facets from raw results
-    $facets = $results['facetDistribution'] ?? [];
-
-    return $facets;
+    return $results;
 });
